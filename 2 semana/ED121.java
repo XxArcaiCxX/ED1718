@@ -12,18 +12,20 @@ public class ED121{
     for(int i=0; i<linhas; i++){
       String linha = stdin.nextLine();
       linha = linha.replaceAll("\\s+","");
+      linha = linha.replaceAll("[^A-Za-z0-9]","");
       int letras = linha.length();
         l = letras/2;
       int flag = 0;
       for(int j=0; j<l; j++){
         k = letras - 1 - j;
+        linha = linha.toLowerCase();
         if(linha.charAt(j) != linha.charAt(k))
           flag = 1;
-      }
-      if(flag == 0)
-        System.out.println("Sim");
-      else if(flag == 1)
-        System.out.println("Nao");
+        }
+        if(flag == 0)
+          System.out.println("sim");
+        else if(flag == 1)
+          System.out.println("nao");
     }
   }
 }
